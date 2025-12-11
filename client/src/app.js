@@ -3,7 +3,7 @@
 const reviewForm = document.getElementById("review-form");
 
 function handleSubmit(event) {
-  event.preventDefault; //! This doesnt seem to be working
+  event.preventDefault();
   const formDataTemplate = new FormData(reviewForm);
   const formValues = Object.fromEntries(formDataTemplate);
   console.log(formValues);
@@ -12,8 +12,8 @@ function handleSubmit(event) {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      body: JSON.stringify({ formValues }),
     },
+    body: JSON.stringify({ formValues }),
   });
 }
 
