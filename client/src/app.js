@@ -7,7 +7,7 @@ function handleSubmit(event) {
   const formDataTemplate = new FormData(reviewForm);
   const formValues = Object.fromEntries(formDataTemplate);
   console.log(formValues);
-  fetch("http://localhost:8080/reviews", {
+  fetch("https://guestbook-client-2nen.onrender.com/reviews", {
     //! Once you finish your project, replace your localhost url with the deployed server url from Render
     method: "POST",
     headers: {
