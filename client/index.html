@@ -5,11 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./src/style.css" />
     <script type="module" src="./src/app.js" defer></script>
-    <title>Fawlty Towers Guest Book</title>
+    <title>Old Town B&B Guest Book</title>
   </head>
   <body>
-    <header><h1></h1></header>
+    <header>
+      <h1>Old Town B&B</h1><h2><i>The coziest hotel in the historic town of Oldington</i></h2>
+    <img src="/home/richardefevre/TechEd/assignment-week4/client/public/images/sign_photo.jpg" class="img1" alt="a hanging sign that says b&b" />
+      <img src="/home/richardefevre/TechEd/assignment-week4/client/public/images/room_photo.jpg" class="img2" alt="a photo of one of our lovely rooms" />
+    </header>
     <main>
+      <!-- TODO: Provide additional functionality on the form, for example, by adding form validation or other options -->
+<!-- add validation features -->
+      <!-- TODO: Style the page excellently, for example, by adding extra UX considerations or animations -->
+<!-- add nav buttons wiht auto scroll -->
+ <h3>We would love to hear what you thought of your stay</h3>
 <form id="review-form">
   <label for="name">What is your full name?</label>
   <input name="name" type="text" required></input>
@@ -21,9 +30,15 @@
   <input name="date_out" type="date" required> <!-- max="2018-12-31"  CAN I IMPLEMENT TOMORROWS DATE? --> </input>
   <label for="comments">How was your stay? </label>
   <input name="comments" required>
+  <!-- TODO: add feedback on successful form submission -->
   <button type="submit">SUBMIT</button>
 </form>
-<section id="previous-reviews"></section>
+<section class="review-container">  <h3>Previous reviews</h3>
+
+<!-- TODO: make previous reviews sortable by oldest or newest -->
+
+<div id="previous-reviews" class="previous-reviews"></div>
+</section>
 </main>
 <footer></footer>
   </body>

@@ -45,18 +45,26 @@ async function retrieveReviews() {
 
 async function renderReviews() {
   const data = await retrieveReviews();
-  for (let i = 0; i < data.length; i++) {
-    const reviewBox = document.createElement("p");
+  for (let i = 0; i < data.length || i < 50; i++) {
+    const reviewBox = document.createElement("div");
+    const detailsP = document.createElement("p");
+    const commentsP = document.createElement("p");
     const dateInString = data[i].date_in.toString();
     const dateOutString = data[i].date_out.toString();
     const dateIn = dateInString.slice(0, 10);
     const dateOut = dateOutString.slice(0, 10);
-    reviewBox.textContent = `Review by ${data[i].name} from ${data[i].location}, who stayed with us from ${dateIn} to ${dateOut}:`;
+    detailsP.textContent = `Review by ${data[i].name} from ${data[i].location}, who stayed with us from ${dateIn} to ${dateOut}:`;
+    commentsP.textContent = `${data[i].comments}`;
     reviewBox.classList.add("old-review");
     reviewBox.id = i;
+
+    reviewBox.classList.add("review-box");
+    detailsP.classList.add("details-p");
+    commentsP.classList.add("comments-p");
+
     reviewContainer.appendChild(reviewBox);
-    //TODO: add function for user to like???
-    console.log(dateIn, dateOut);
+    reviewBox.appendChild(detailsP);
+    reviewBox.appendChild(commentsP);
   }
 }
 
