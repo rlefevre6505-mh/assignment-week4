@@ -16,7 +16,6 @@ app.get("/", (request, response) =>
   response.json({ message: "Welcome to the server!" })
 );
 
-//TODO: a route to CREATE data in the database
 app.post("/reviews", (request, response) => {
   const reviewForm = request.body.formValues;
   const query = db.query(
@@ -34,6 +33,10 @@ app.post("/reviews", (request, response) => {
 
 //TODO: a route to READ data from the database
 
-app.get("/storedreviews", (request, response) => {
-  response.json();
+app.get("/storedreviews", async function (request, response) {
+  const query = await db.query(
+    `SELECT name, location, date_in, date_out, comments FROM hotelreviews;`
+  );
+  console.log(query);
+  response.json()(query.rows);
 });
