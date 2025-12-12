@@ -33,3 +33,7 @@ app.post("/reviews", (request, response) => {
 });
 
 //TODO: a route to READ data from the database
+
+app.get("/storedreviews", (request, response) => {
+  response.json();
+});

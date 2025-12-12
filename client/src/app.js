@@ -34,5 +34,15 @@ reviewForm.addEventListener("submit", handleSubmit);
 //TODO: render users' data on the interface
 
 //fetch the GET route from the server
+async function retrieveReviews() {
+  const response = await fetch(
+    "https://guestbook-server-1j5c.onrender.com/storedreviews"
+  );
+  const data = await response.json();
+  console.log(data);
+  return data;
+}
+
+retrieveReviews();
 
 //render the data using DOM elements (one per piece of data)
