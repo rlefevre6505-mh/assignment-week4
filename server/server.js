@@ -6,11 +6,11 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-const PORT = 8080;
+// const PORT = 8080;
 
-app.listen(PORT, () => {
-  console.info(`Server is running in port ${PORT}`);
-});
+// app.listen(PORT, () => {
+//   console.info(`Server is running in port ${PORT}`);
+// });
 
 app.get("/", (request, response) =>
   response.json({ message: "Welcome to the server!" })
