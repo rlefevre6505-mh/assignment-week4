@@ -20,8 +20,14 @@ app.get("/", (request, response) =>
 app.post("/reviews", (request, response) => {
   const reviewForm = request.body.formValues;
   const query = db.query(
-    `INSERT INTO hotelreviews (name, location, date, comments) VALUES ($1, $2, $3, $4)`,
-    [reviewForm.name, reviewForm.location, reviewForm.date, reviewForm.comments]
+    `INSERT INTO hotelreviews (name, location, date_in, date_out, comments) VALUES ($1, $2, $3, $4, $5)`,
+    [
+      reviewForm.name,
+      reviewForm.location,
+      reviewForm.date_in,
+      reviewForm.date_out,
+      reviewForm.comments,
+    ]
   );
   response.json({ staus: "success", values: reviewForm });
 });
