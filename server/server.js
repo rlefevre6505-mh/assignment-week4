@@ -37,6 +37,6 @@ app.get("/storedreviews", async function (request, response) {
   const query = await db.query(
     `SELECT name, location, date_in, date_out, comments FROM hotelreviews;`
   );
-  console.log(query);
-  response.json(query.rows);
+  console.log(query.rows);
+  const data = response.json(query.rows);
 });

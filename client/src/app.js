@@ -31,9 +31,8 @@ reviewForm.addEventListener("submit", handleSubmit);
 
 //===============================================
 
-//TODO: render users' data on the interface
+//TODO: fetch the GET route from the server
 
-//fetch the GET route from the server
 async function retrieveReviews() {
   const response = await fetch(
     "https://guestbook-server-1j5c.onrender.com/storedreviews"
@@ -43,6 +42,19 @@ async function retrieveReviews() {
   return data;
 }
 
-retrieveReviews();
+//TODO: render the data using DOM elements (one per piece of data)
 
-//render the data using DOM elements (one per piece of data)
+const reviewContainer = document.getElementById("previous-reviews");
+
+function renderReviews(reviewData) {
+  for (let i = 0; i < previousReviews.length; i++) {
+    const reviewBox = document.createElement("p");
+    reviewBox.textContent = `Review by ${reviewData[i].name} from ${reviewData[i].location}, who stayed wiht us from ${reviewData[i].date_in} tot ${reviewData[i].date_out}: )`;
+
+    reviewBox.classList.add("old-review");
+    reviewBox.id = i;
+    reviewContainer.appendChild(reviewBox);
+  }
+}
+
+renderReviews(retrieveReviews());
