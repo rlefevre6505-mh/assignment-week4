@@ -38,5 +38,5 @@ app.get("/storedreviews", async function (request, response) {
     `SELECT name, location, date_in, date_out, comments FROM hotelreviews;`
   );
   console.log(query);
-  response.json()(query.rows);
+  response.json(query.rows);
 });
