@@ -24,6 +24,13 @@ function handleSubmit(event) {
   });
   const form = document.getElementById("review-form");
   form.reset();
+  // if (response.staus == "success") {
+  //   const successMessage = document.createElement("p");
+  //   successMessage.textContent =
+  //     "Review submitted. Thank you for your feedback.";
+  //   const docElement = document.querySelector(".comments");
+  //   docElement.appendChild(successMessage);
+  // }
 }
 
 reviewForm.addEventListener("submit", handleSubmit);

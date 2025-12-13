@@ -4,20 +4,22 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Old Town B&B Guest Book</title>
-    <script type="module" crossorigin src="/assets/index-BDYMBgdh.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-LZmlHMIY.css">
+    <script type="module" crossorigin src="/assets/index-BxTN1Hch.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-BWSAmVrX.css">
   </head>
   <body>
     <header>
-      <h1>Old Town B&B</h1><h2><i>The coziest hotel in the historic town of Oldington</i></h2>
+      <h1>Old Town B&B</h1><h2><i>The coziest hotel in the historic</br>town of Oldington</i></h2>
+      <div class="image-container">
     <img src="https://static.wixstatic.com/media/5d2efd_de6a002ebfcb4312908e4b987fd68ef1~mv2.jpg/v1/fill/w_980,h_654,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/5d2efd_de6a002ebfcb4312908e4b987fd68ef1~mv2.jpg" class="img-room1" alt="a photo of one of our lovely rooms" />
-      <img src="https://www.maplebank.co.uk/wp-content/uploads/2022/08/IMG_5527-B-scaled.jpg" class="img-room2" alt="a photo of one of our lovely rooms" />
+      <img src="https://www.maplebank.co.uk/wp-content/uploads/2022/08/IMG_5527-B-scaled.jpg" class="img-room2" alt="a photo of one of our lovely rooms" /></div>
     </header>
     <main>
       <!-- TODO: Provide additional functionality on the form, for example, by adding form validation or other options -->
 <!-- add validation features -->
       <!-- TODO: Style the page excellently, for example, by adding extra UX considerations or animations -->
 <!-- add nav buttons with auto scroll -->
+ <!-- make footer! -->
  <h3>We would love to hear what you thought of your stay</h3>
 <form id="review-form">
   <label for="name">What is your full name?</label>
@@ -25,15 +27,15 @@
   <label for="location">Where are you from?</label>
   <input name="location" type="text" required></input>
   <label for="date_in">When did you start your stay with us?</label>
-  <input name="date_in" id="date-setter1" type="date" max="" required> <!-- max="2018-12-31"  CAN I IMPLEMENT TOMORROWS DATE? --> </input>
+  <input name="date_in" id="date-setter1" type="date" max="" required> </input>
     <label for="date_out">When did you check out?</label>
-  <input name="date_out" id="date-setter2" type="date" max="" required> <!-- max="2018-12-31"  CAN I IMPLEMENT TOMORROWS DATE? --> </input>
+  <input name="date_out" id="date-setter2" type="date" max="" required> </input>
   <label for="comments">How was your stay? </label>
   <textarea name="comments" class="comments" maxlength="300" placeholder="maximum 300 characters" required></textarea>
   <!-- TODO: add feedback on successful form submission -->
   <button type="submit" id="submit-button">SUBMIT</button>
 </form>
-<section class="review-container">  <div class="reviews-header"> <h3>Previous reviews</h3><button id="sort-button">sort by: oldest</button></div>
+<section class="review-container">  <div class="reviews-header"> <h3>Previous reviews</h3><button id="sort-button">sort by: latest</button></div>
 <div id="previous-reviews" class="previous-reviews"></div>
 </section>
 </main>
