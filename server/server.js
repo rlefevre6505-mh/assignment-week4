@@ -31,8 +31,6 @@ app.post("/reviews", (request, response) => {
   response.json({ staus: "success", values: reviewForm });
 });
 
-//TODO: a route to READ data from the database
-
 app.get("/storedreviews", async function (request, response) {
   const query = await db.query(
     `SELECT name, location, date_in, date_out, comments FROM hotelreviews;`

@@ -7,41 +7,51 @@
 body {
   background-color: rgb(17, 68, 110);
   display: grid;
-  grid-template-rows: 200px 3fr 1fr;
+  grid-template-rows: 260px 3fr 1fr;
   grid-template-columns: 50px 1fr 50px;
 }
 
 header {
+  /* box-sizing: content-box; */
   font-family: Georgia, "Times New Roman", Times, serif;
-  background-color: rgba(193, 255, 251, 0.856);
+  color: rgb(202, 218, 230);
+  background-color: rgb(8, 39, 61);
   grid-row: 1/2;
   grid-column: 1/-1;
   text-align: center;
   position: relative;
+  border-bottom: 5px double rgba(255, 255, 255, 0.8);
 }
 
-.img1 {
-  z-index: 1;
-  position: absolute;
+h1 {
+  color: rgb(238, 240, 241);
+  margin: 5px 0 5px 0;
 }
 
-.img2 {
-  z-index: 1;
+h2 {
+  font-size: 1rem;
+}
+
+img {
   position: absolute;
+  bottom: 5px;
+  max-height: 55%;
+}
+
+.img-room1 {
+  right: 5vw;
+}
+
+.img-room2 {
+  left: 5vw;
+  margin-left: 3px;
 }
 
 main {
-  background-color: rgba(193, 255, 251, 0.2);
+  background-color: rgba(193, 255, 251, 0.25);
   margin-top: 20px;
   grid-row: 2/-1;
   grid-column: 2/3;
-}
-
-h3 {
-  text-align: center;
-  color: white;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  font-weight: 500;
 }
 
 form {
@@ -55,16 +65,55 @@ form {
 
 input {
   min-height: 30px;
+  border-radius: 8px;
+  align-self: center;
+  width: clamp(10rem, 55vw, 30rem);
+  font-size: 1.1rem;
+}
+
+.comments {
+  min-height: 160px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 1.2rem;
 }
 
 label {
   min-height: 25px;
   margin-top: 20px;
   margin-bottom: 5px;
+  margin-left: 20px;
 }
 
-button {
-  margin-top: 50px;
+#submit-button {
+  width: 200px;
+  height: 30px;
+  margin: auto;
+  margin-top: 20px;
+  border-radius: 10px;
+}
+
+.reviews-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+h3 {
+  text-align: center;
+  color: white;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-top: 40px;
+}
+
+#sort-button {
+  color: white;
+  background-color: rgba(17, 68, 110, 0.8);
+  padding: 0 5px 0px 5px;
+  max-height: 20px;
+  align-self: end;
+  border-radius: 5px;
 }
 
 .previous-reviews {
@@ -72,13 +121,16 @@ button {
   flex-direction: column-reverse;
   gap: 30px;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  padding: 15px;
 }
 
-/* .previous-reviews-reverse{
-  ### alternative class for reversed order in #previous-reviews ###
+.previous-reviews-reverse {
   display: flex;
-flex-direction: column;
-} */
+  flex-direction: column;
+  gap: 30px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  padding: 15px;
+}
 
 .review-box {
   padding: 5px;
@@ -94,8 +146,16 @@ flex-direction: column;
 }
 .comments-p {
   color: white;
-  padding: 5px;
+  font-weight: 600;
+  text-align: center;
+  padding: 15px 50px 15px 50px;
   background-color: rgb(10, 68, 110);
   border-radius: 5px;
   margin-top: 10px;
 }
+
+/* TODO: make fully responsice */
+/* @media {
+  header to grid format with text between images
+  form label text to center
+} */

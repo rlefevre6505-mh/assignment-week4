@@ -1,13 +1,12 @@
-// TODO: max all date entry as today
-// const today = new Date();
-// let day = today.getDate();
-// let month = today.getMonth() + 1;
-// let year = today.getFullYear();
-// let currentDate = `${year}/${month}/${day}`;
-// const dateSetter = document.getElementById("date-setter");
-// dateSetter.setAttribute("max", currentDate);
-
-//TODO: collect users' data and send to the server
+const today = new Date();
+let day = today.getDate();
+let month = today.getMonth() + 1;
+let year = today.getFullYear();
+let currentDate = `${year}-${month}-${day}`;
+const dateSetter1 = document.getElementById("date-setter1");
+dateSetter1.setAttribute("max", currentDate);
+const dateSetter2 = document.getElementById("date-setter2");
+dateSetter2.setAttribute("max", currentDate);
 
 const reviewForm = document.getElementById("review-form");
 
@@ -23,15 +22,11 @@ function handleSubmit(event) {
     },
     body: JSON.stringify({ formValues }),
   });
-  // const form = document.getElementById("review-form");
-  // form.reset();
+  const form = document.getElementById("review-form");
+  form.reset();
 }
 
 reviewForm.addEventListener("submit", handleSubmit);
-
-//===============================================
-
-//TODO: fetch the GET route from the server
 
 const reviewContainer = document.getElementById("previous-reviews");
 
@@ -69,3 +64,17 @@ async function renderReviews() {
 }
 
 renderReviews(retrieveReviews());
+
+const sortButton = document.getElementById("sort-button");
+
+sortButton.addEventListener("click", function () {
+  if (sortButton.innerText == "sort by: oldest") {
+    sortButton.innerText = "sort by: latest";
+    reviewContainer.classList.remove("previous-reviews-reverse");
+    reviewContainer.classList.add("previous-reviews");
+  } else if (sortButton.innerText == "sort by: latest") {
+    sortButton.innerText = "sort by: oldest";
+    reviewContainer.classList.remove("previous-reviews");
+    reviewContainer.classList.add("previous-reviews-reverse");
+  }
+});
