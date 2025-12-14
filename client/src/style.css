@@ -249,4 +249,7 @@ a {
     max-height: 120px;
     margin-bottom: 20px;
   }
+  a {
+    display: none;
+  }
 }
