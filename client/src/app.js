@@ -1,12 +1,14 @@
 const today = new Date();
 let day = today.getDate();
+let nextDay = today.getDate() + 1;
 let month = today.getMonth() + 1;
 let year = today.getFullYear();
 let currentDate = `${year}-${month}-${day}`;
+let nextDate = `${year}-${month}-${nextDay}`;
 const dateSetter1 = document.getElementById("date-setter1");
 dateSetter1.setAttribute("max", currentDate);
 const dateSetter2 = document.getElementById("date-setter2");
-dateSetter2.setAttribute("max", currentDate);
+dateSetter2.setAttribute("max", nextDate);
 
 const reviewForm = document.getElementById("review-form");
 
@@ -59,11 +61,9 @@ async function renderReviews() {
     commentsP.textContent = `${data[i].comments}`;
     reviewBox.classList.add("old-review");
     reviewBox.id = i;
-
     reviewBox.classList.add("review-box");
     detailsP.classList.add("details-p");
     commentsP.classList.add("comments-p");
-
     reviewContainer.appendChild(reviewBox);
     reviewBox.appendChild(detailsP);
     reviewBox.appendChild(commentsP);

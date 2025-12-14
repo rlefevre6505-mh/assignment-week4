@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -12,7 +13,6 @@ body {
 }
 
 header {
-  /* box-sizing: content-box; */
   font-family: Georgia, "Times New Roman", Times, serif;
   color: rgb(202, 218, 230);
   background-color: rgb(8, 39, 61);
@@ -52,6 +52,7 @@ main {
   margin-top: 20px;
   grid-row: 2/-1;
   grid-column: 2/3;
+  padding-bottom: 30vh;
 }
 
 form {
@@ -84,7 +85,8 @@ label {
   margin-left: 20px;
 }
 
-button:hover {
+button:hover,
+a:hover {
   cursor: pointer;
 }
 
@@ -121,7 +123,6 @@ h3 {
   font-weight: 600;
 
   padding: 5px 5px 5px 5px;
-  /* max-height: 20px; */
   align-self: end;
   border-radius: 5px;
 }
@@ -164,17 +165,36 @@ h3 {
   margin-top: 10px;
 }
 
-/* TODO: make fully responsice */
+footer {
+  width: 100%;
+  height: 22vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 0.9rem;
+  color: rgb(238, 240, 241);
+  background-color: rgb(8, 39, 61);
+  border-top: 5px double rgba(255, 255, 255, 0.8);
+  text-align: center;
+}
+
+.footer-box {
+  width: 25vw;
+}
+
+.footer-p {
+  color: rgb(134, 168, 194);
+  font-size: 0.8rem;
+}
+
+a {
+  color: rgb(238, 240, 241);
+}
+
 @media (width > 800px) {
-  /* header to grid format with text between images */
-  /* .img-room1 {
-    position: static;
-  }
-
-  .img-room2 {
-    position: static;
-  } */
-
   img {
     max-height: 160px;
   }
@@ -183,7 +203,6 @@ h3 {
     display: grid;
   }
 
-  /* form label text to center */
   label {
     align-self: center;
   }
